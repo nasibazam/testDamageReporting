@@ -38,10 +38,6 @@ const addTask = (task) => {
 const deleteTask = (id) => {
   setTasks(tasks.filter((task) => task.id !== id));
   }
-// Checking
-const handle = () => {
-  console.log('hello w');
-}
 // Taggle
 const toggleReminder = (id) => {
   setTasks(tasks.map((task) => 
@@ -52,8 +48,7 @@ const toggleReminder = (id) => {
   return (
     <div className= 'container'>
       <h1>Property Damage Reporting</h1>
-      <Header title= 'Form'/>
-      <button onClick={handle}>click</button >
+      <Header title= 'Form' />
       <AddTask onAdd={addTask} />
       {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />) : (
         'No task to show')}
